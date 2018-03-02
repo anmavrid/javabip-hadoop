@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<glue>
+	<accepts>
+		<accept>
+			<effect id="out" specType="fr.inria.orpheus.mappers.Tokenizer" />
+			<causes>
+				<port id="in" specType="fr.inria.orpheus.reducers.IntSum" />
+			</causes>
+		</accept>
+		<accept>
+			<effect id="in" specType="fr.inria.orpheus.reducers.IntSum" />
+			<causes>
+				<port id="out" specType="fr.inria.orpheus.mappers.Tokenizer" />
+			</causes>
+		</accept>
+	</accepts>
+	<requires>
+		<require>
+			<effect id="out" specType="fr.inria.orpheus.mappers.Tokenizer" />
+			<causes>
+				<option>
+					<causes>
+						<port id="in" specType="fr.inria.orpheus.reducers.IntSum" />
+					</causes>
+				</option>
+			</causes>
+		</require>
+		<require>
+			<effect id="in" specType="fr.inria.orpheus.reducers.IntSum" />
+			<causes>
+				<option>
+					<causes>
+						<port id="out" specType="fr.inria.orpheus.mappers.Tokenizer" />
+					</causes>
+				</option>
+			</causes>
+		</require>
+	</requires>
+</glue>
